@@ -1,0 +1,147 @@
+---
+title: "Como acessar dados geoespaciais abertos do Brasil com geobr"
+author: "Beatriz Milz"
+subtitle: "Open Data Day - PyLadies São Paulo"
+date: "2025-03-29"
+date-format: "DD/MM/YYYY"
+format: 
+  revealjs:
+    footer: "Slides feitos com [Quarto](https://quarto.org/docs/presentations/revealjs/index.html)."
+#   logo: images/logo-laplan.png
+    theme: styles.scss
+    slide-number: c/t
+    show-slide-number: all
+    code-link: true
+    code-copy: true
+incremental: false
+jupyter: python3
+editor: 
+  markdown: 
+    wrap: 72
+execute: 
+  echo: true
+---
+
+## Beatriz Milz
+
+-   Doutora em Ciência Ambiental no IEE/USP
+-   Atualmente: Estágio pós-doutoral na UFABC
+-   Co-organizadora da [R-Ladies São Paulo](https://rladies-sp.org)
+-   *Software peer review editor* na [rOpenSci](https://ropensci.org/)
+-   [GitHub Star](https://stars.github.com/profiles/beatrizmilz/)
+
+<center>[![](images/logo-rladies.png){fig-align="center"
+width="20%"}](https://rladies-sp.org/)
+[![](images/ropensci.png){fig-align="center"
+width="20%"}](https://ropensci.org/)
+[![](images/github-stars-logo_Color.webp){fig-align="center"
+width="25%"}](https://stars.github.com/profiles/beatrizmilz/)</center>
+
+
+## Pacote geobr
+
+-   O pacote **geobr** disponibiliza funções para obter diversas bases de dados **espaciais** oficiais do Brasil.
+
+-   O pacote foi desenvolvido e é mantido pela equipe do [Instituto de Pesquisa Econômica Aplicada (IPEA)](https://www.ipea.gov.br/portal/).
+
+-   Você pode saber mais no [repositório do pacote no GitHub](https://ipeagit.github.io/geobr/).
+
+-   Disponível para `R` e `Python`.
+
+<center>![](images/logos/geobr-amarelo.png){fig-align="center"
+width="15%"}![](images/logos/geobr-preto.png){fig-align="center"
+width="15%"}</center>
+
+
+##
+
+[![](images/geobr-PyPI.png){fig-align="center"}](https://pypi.org/project/geobr/)
+
+
+## Instalação
+
+```{python}
+#| eval: false
+pip install geobr
+```
+
+### Importando a biblioteca 
+
+```{python}
+import geobr
+import matplotlib.pyplot as plt
+import pandas as pd
+
+%matplotlib inline
+```
+
+## Listando funções disponíveis
+
+```{python}
+geobr.list_geobr()
+```
+
+## Como consultar a delimitação do Brasil?
+
+```
+Function: read_country
+Geographies available: Country
+Years available: 1872, 1900, 1911, 1920, 1933, 1940, 1950, 1960, 1970, 1980, 1991, 2000, 2001, 2010, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020
+Source: IBGE
+```
+
+```{python}
+geo_brasil = geobr.read_country(year = 2020)
+```
+
+## Explorando o objeto:
+
+```{python}
+geo_brasil.info()
+```
+
+## Visualizando o mapa
+
+```{python}
+#| eval: false
+fig, ax = plt.subplots(figsize=(15, 15), dpi=300)
+
+geo_brasil.plot(facecolor="#ffffff", edgecolor="#000000", ax=ax)
+
+ax.axis("off")
+
+fig.savefig("images/brasil_map.png")
+```
+
+![](images/brasil_map.png){fig-align="center"}
+
+## Estados
+
+```{python}
+geo_estados = geobr.read_state(year = 2020)
+geo_estados.info()
+
+```
+
+## 
+
+```{python}
+geo_estados.head(n=3)
+```
+
+
+
+## Visualizando o mapa
+
+```{python}
+#| eval: false
+fig, ax = plt.subplots(figsize=(15, 15), dpi=300)
+
+geo_estados.plot(facecolor="#ffffff", edgecolor="#000000", ax=ax)
+
+ax.axis("off")
+
+fig.savefig("images/brasil_estados_map.png")
+```
+
+![](images/brasil_estados_map.png){fig-align="center"}
