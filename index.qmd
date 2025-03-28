@@ -6,7 +6,7 @@ date: "2025-03-29"
 date-format: "DD/MM/YYYY"
 format: 
   revealjs:
-    footer: "Slides feitos com [Quarto](https://quarto.org/docs/presentations/revealjs/index.html)."
+    footer: "[beamilz.com](https://beamilz.com)"
 #   logo: images/logo-laplan.png
     theme: styles.scss
     slide-number: c/t
@@ -42,6 +42,26 @@ width="20%"}](https://ropensci.org/)
 width="25%"}](https://stars.github.com/profiles/beatrizmilz/)</center>
 
 
+## {background-color="white" background-image="images/linha-do-tempo.png"}
+
+::: {.footer}
+
+:::
+
+::: {.notes}
+- Dados espaciais são muito importantes na área ambiental.
+
+- Primeiro contato com esse tipo de dado foi em 2012
+
+- Comecei a usar no trabalho em 2014
+
+- Usei muito no estágio, no mestrado. No doutorado usei menos. No trabalho de consultoria tenho usado bastante! No pós-doc tenho usado bastante!
+
+Seria muito legal uma "linha do tempo" similar ao que a Nath Demi faz!
+:::
+
+
+
 ## Pacote geobr
 
 -   O pacote **geobr** disponibiliza funções para obter diversas bases de dados **espaciais** oficiais do Brasil.
@@ -59,16 +79,58 @@ width="15%"}
 width="15%"}
 </center>
 
+
+
 ## 
 
 Fazer um disclaimer: eu programo em R há mais tempo. tem materiais que já fiz sobre isso. deixar links.
 
 
-# Conceitos 
+# Conceitos importantes
+
+## Tipos de dados espaciais
+
+- Dados vetoriais
+- Dados matriciais/raster
+
+
+![](images/vector-raster_1644589693.jpeg){fig-align="center"}
+
+::: footer
+Fonte da imagem: <https://guides.lib.uw.edu/>
+:::
+
+
+## Dados vetoriais
+
+-   Representação do mundo por pontos, linhas e polígonos.
+
+![](images/exemplo-vetores.png){fig-align="center"}
+
+::: footer
+Fonte: [Geocomputation with R](https://r.geocompx.org/spatial-class)
+:::
+
+## Com o geobr, trabalhamos com dados vetoriais!
+
+-   **Pontos**: localização de uma escola, ponto de coleta, etc.
+
+-   **Linhas**: ruas/estradas/rodovias, rios, etc.
+
+-   **Polígonos**: delimitação de cidades, estados, países, etc.
+
 
 # `geobr`
 
-## Instalação
+
+# Instalação
+
+##
+
+[![](images/geobr-PyPI.png){fig-align="center"}](https://pypi.org/project/geobr/)
+
+
+## Instalação das bibliotecas
 
 Para o Python, o `geobr` está disponível no `pip`. 
 
@@ -91,13 +153,7 @@ pip install pandas geopandas
 pip install folium matplotlib mapclassify
 ```
 
-
-##
-
-[![](images/geobr-PyPI.png){fig-align="center"}](https://pypi.org/project/geobr/)
-
-
-
+# Importação de dados
 
 ## Importando bibliotecas
 
@@ -136,19 +192,19 @@ geo_brasil.info()
 
 Informações relevantes:
 
-- Tem apenas 1 linha 
-- Tem uma coluna chamada `geometry`
+- Tem apenas 1 linha e 1 coluna (chamada `geometry`)
+
 - Classe do objeto é `geopandas.geodataframe.GeoDataFrame`
+
 
 ## O que é o geopandas?
 
-
-- **GeoPandas** é uma biblioteca Python que estende as funcionalidades do [Pandas](https://pandas.pydata.org/) para dados geoespaciais.
+- [**Pandas**](https://pandas.pydata.org/) é uma biblioteca Python focada em manipulação e análise de dados.
+- [**GeoPandas**](https://geopandas.org/) é uma biblioteca Python que estende as funcionalidades do [Pandas](https://pandas.pydata.org/) para dados geoespaciais.
 - Facilita a leitura, manipulação, análise e visualização de dados vetoriais (shapes) dentro de um único ecossistema.
 - Cada linha em um **GeoDataFrame** corresponde a uma entidade geoespacial (por exemplo, um polígono de município).
 - A coluna `geometry` armazena a forma geográfica em si (pontos, linhas ou polígonos).
 
-[![](images/geopandas_logo_web.svg){fig-align="center" out-width="80%"}](https://geopandas.org/)
 
 ## Buscando a delimitação dos estados
 
@@ -160,12 +216,28 @@ geo_estados.info()
 ## 
 
 ```{python}
-geo_estados.head(n=3)
+geo_estados.sample(n=4)
 ```
 
+## Funções similares
+
+-   `read_country()`: Delimitação do Brasil
+
+-   `read_state()`: Delimitação dos estados do Brasil
+
+-   `read_state("SP")`: Delimitação de um estado específico, usando a
+    sigla como argumento
+
+-   `read_municipality()`: Delimitação de todos os municípios do Brasil.
+    É uma base pesada!
+
+-   `read_municipality(code_muni = 3550308)`: Delimitação de um
+    município específico, usando o código do IBGE do município.
+
+# Visualização
+## Como podemos visualizar?
 
 
-## Visualizando
 
 ```{python}
 # geo_brasil.plot()
@@ -178,3 +250,65 @@ geo_estados.head(n=3)
 ```{python}
 # geo_estados.explore()
 ```
+
+
+
+
+## Dica
+
+- O pacote `{geobr}` faz o download das bases de dados. Isso significa que: 
+    - Você precisa estar conectado à internet para baixar as bases de dados.
+    - Caso o servidor onde os dados estão armazenados esteja fora do ar, você não conseguirá baixar as bases de dados.
+    
+Uma sugestão é salvar os resultados em um arquivo após baixar os dados, para evitar ter que baixar novamente.
+
+
+## Pacotes de dados brasileiros desenvolvidos pelo IPEA
+
+<center>[![](images/logos/geobr-amarelo.png){fig-align="center"
+width="15%"}](https://ipeagit.github.io/geobr/)
+[![](images/logos/geobr-preto.png){fig-align="center"
+width="15%"}](https://ipeagit.github.io/geobr/)
+[![](images/logos/flightsbr.png){fig-align="center"
+width="15%"}](https://ipeagit.github.io/flightsbr)
+[![](images/logos/censobr.png){fig-align="center"
+width="15%"}](https://ipeagit.github.io/censobr/)</center>
+
+# Materiais para estudar mais
+
+
+## Exemplos similares
+
+-   [Workshop: {censobr} - Explorando o Censo Demográfico em
+    R](https://ipeagit.github.io/censobr_oficina_abep_2024/)
+
+-   [Documentação: Pacote abjData](https://abjur.github.io/abjData/)
+
+-   [Video: Join - Juntando bases de
+    dados](https://youtu.be/xnUo25VRH70?si=du-DZCkkadigTcCI)
+
+-   [Post: Criando mapas com os pacotes tidyverse e geobr, utilizando
+    dados sobre coleta e tratamento de esgoto no Estado De São
+    Paulo](https://beamilz.com/posts/2020-07-27-criando-mapas-com-os-pacotes-tidyverse-e-geobr/pt/)
+
+## Referências sobre dados espaciais
+
+-   [Capítulo 15: Dados geoespaciais - Livro Análises Ecológicas no
+    R](https://analises-ecologicas.netlify.app/cap15.html)
+
+-   [Livro Geocomputation with
+    R](https://geocompr.robinlovelace.net/intro.html)
+
+-   [A Gentle Introduction to GIS - QGIS
+    Documentation](https://docs.qgis.org/3.22/en/docs/gentle_gis_introduction/)
+
+-   [Geocomputation with R - Foundations - Geographic data in
+    R](https://r.geocompx.org/spatial-class)
+
+-   [Introdução à acessibilidade urbana - um guia prático em
+    R](https://ipeagit.github.io/intro_access_book/pt/)
+
+
+## Muito obrigada!
+
+Slides feitos com [Quarto](https://quarto.org/docs/presentations/revealjs/index.html).

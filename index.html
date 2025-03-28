@@ -94,7 +94,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-68e3f61865b897a37603019f0fc68820.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-b659bed8df4cb4f0ffaba5012e77eec5.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -217,9 +217,35 @@ Beatriz Milz
 <li><em>Software peer review editor</em> na <a href="https://ropensci.org/">rOpenSci</a></li>
 <li><a href="https://stars.github.com/profiles/beatrizmilz/">GitHub Star</a></li>
 </ul>
+<p><img src="images/bea.png" style=" position: absolute;top: 0%; right: -10%; width: 40%; z-index: 0;"></p>
 <center>
 <a href="https://rladies-sp.org/"><img data-src="images/logo-rladies.png" class="quarto-figure quarto-figure-center" style="width:20.0%"></a> <a href="https://ropensci.org/"><img data-src="images/ropensci.png" class="quarto-figure quarto-figure-center" style="width:20.0%"></a> <a href="https://stars.github.com/profiles/beatrizmilz/"><img data-src="images/github-stars-logo_Color.webp" class="quarto-figure quarto-figure-center" style="width:25.0%"></a>
 </center>
+</section>
+<section id="section" class="slide level2" data-background-color="white" data-background-image="images/linha-do-tempo.png">
+<h2></h2>
+<div class="footer">
+
+</div>
+<aside class="notes">
+<ul>
+<li><p>Dados espaciais são muito importantes na área ambiental.</p></li>
+<li><p>Primeiro contato com esse tipo de dado foi em 2012</p></li>
+<li><p>Comecei a usar no trabalho em 2014</p></li>
+<li><p>Usei muito no estágio, no mestrado. No doutorado usei menos. No trabalho de consultoria tenho usado bastante! No pós-doc tenho usado bastante!</p></li>
+</ul>
+<p>Seria muito legal uma “linha do tempo” similar ao que a Nath Demi faz!</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="pacote-geobr" class="slide level2">
 <h2>Pacote geobr</h2>
@@ -230,10 +256,58 @@ Beatriz Milz
 <li><p>Disponível para <code>R</code> e <code>Python</code>.</p></li>
 </ul>
 <center>
-<img data-src="images/logos/geobr-amarelo.png" class="quarto-figure quarto-figure-center" style="width:15.0%"><img data-src="images/logos/geobr-preto.png" class="quarto-figure quarto-figure-center" style="width:15.0%">
+<img data-src="images/logos/geobr-amarelo.png" class="quarto-figure quarto-figure-center" style="width:15.0%"> <img data-src="images/logos/geobr-preto.png" class="quarto-figure quarto-figure-center" style="width:15.0%">
 </center>
 </section>
-<section id="section" class="slide level2">
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p>Fazer um disclaimer: eu programo em R há mais tempo. tem materiais que já fiz sobre isso. deixar links.</p>
+</section>
+<section>
+<section id="conceitos-importantes" class="title-slide slide level1 center">
+<h1>Conceitos importantes</h1>
+
+</section>
+<section id="tipos-de-dados-espaciais" class="slide level2">
+<h2>Tipos de dados espaciais</h2>
+<ul>
+<li>Dados vetoriais</li>
+<li>Dados matriciais/raster</li>
+</ul>
+
+<img data-src="images/vector-raster_1644589693.jpeg" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
+<p>Fonte da imagem: <a href="https://guides.lib.uw.edu/" class="uri">https://guides.lib.uw.edu/</a></p>
+</div>
+</section>
+<section id="dados-vetoriais" class="slide level2">
+<h2>Dados vetoriais</h2>
+<ul>
+<li>Representação do mundo por pontos, linhas e polígonos.</li>
+</ul>
+
+<img data-src="images/exemplo-vetores.png" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
+<p>Fonte: <a href="https://r.geocompx.org/spatial-class">Geocomputation with R</a></p>
+</div>
+</section>
+<section id="com-o-geobr-trabalhamos-com-dados-vetoriais" class="slide level2">
+<h2>Com o geobr, trabalhamos com dados vetoriais!</h2>
+<ul>
+<li><p><strong>Pontos</strong>: localização de uma escola, ponto de coleta, etc.</p></li>
+<li><p><strong>Linhas</strong>: ruas/estradas/rodovias, rios, etc.</p></li>
+<li><p><strong>Polígonos</strong>: delimitação de cidades, estados, países, etc.</p></li>
+</ul>
+</section></section>
+<section id="geobr" class="title-slide slide level1 center">
+<h1><code>geobr</code></h1>
+
+</section>
+
+<section>
+<section id="instalação" class="title-slide slide level1 center">
+<h1>Instalação</h1>
+
+</section>
+<section id="section-2" class="slide level2">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -241,24 +315,40 @@ Beatriz Milz
 </figure>
 </div>
 </section>
-<section id="instalação" class="slide level2">
-<h2>Instalação</h2>
-<div id="7b85688a" class="cell" data-execution_count="1">
+<section id="instalação-das-bibliotecas" class="slide level2">
+<h2>Instalação das bibliotecas</h2>
+<p>Para o Python, o <code>geobr</code> está disponível no <code>pip</code>.</p>
+<div id="41c5eb62" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a>pip install geobr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<h3 id="importando-a-biblioteca">Importando a biblioteca</h3>
-<div id="9445b546" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">import</span> geobr</span>
-<span id="cb2-2"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb2-3"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-4"><a href=""></a></span>
-<span id="cb2-5"><a href=""></a><span class="op">%</span>matplotlib inline</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Instalar outras dependências que precisaremos:</p>
+<div id="e3b3a58e" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a>pip install pandas geopandas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Para usar o método <code>.explore()</code>:</li>
+</ul>
+<div id="8483788a" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a>pip install folium matplotlib mapclassify</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section id="importação-de-dados" class="title-slide slide level1 center">
+<h1>Importação de dados</h1>
+
+</section>
+<section id="importando-bibliotecas" class="slide level2">
+<h2>Importando bibliotecas</h2>
+<div id="72493518" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="im">import</span> geobr</span>
+<span id="cb4-2"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-3"><a href=""></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="listando-funções-disponíveis" class="slide level2">
 <h2>Listando funções disponíveis</h2>
-<div id="5e8f2d6d" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a>geobr.list_geobr()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="8612a346" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a>geobr.list_geobr()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Function: read_country
 Geographies available: Country
@@ -400,18 +490,20 @@ Source: IBGE
 </section>
 <section id="como-consultar-a-delimitação-do-brasil" class="slide level2">
 <h2>Como consultar a delimitação do Brasil?</h2>
+<p>Informações retornadas por <code>geobr.list_geobr()</code>:</p>
 <pre><code>Function: read_country
 Geographies available: Country
 Years available: 1872, 1900, 1911, 1920, 1933, 1940, 1950, 1960, 1970, 1980, 1991, 2000, 2001, 2010, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020
 Source: IBGE</code></pre>
-<div id="6fe3ad68" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>geo_brasil <span class="op">=</span> geobr.read_country(year <span class="op">=</span> <span class="dv">2020</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Utilizando a função:</p>
+<div id="da7f8693" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a>geo_brasil <span class="op">=</span> geobr.read_country(year <span class="op">=</span> <span class="dv">2020</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="explorando-o-objeto" class="slide level2">
 <h2>Explorando o objeto:</h2>
-<div id="c6f91905" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a>geo_brasil.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="952acb1d" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>geo_brasil.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'geopandas.geodataframe.GeoDataFrame'&gt;
 RangeIndex: 1 entries, 0 to 0
@@ -423,25 +515,27 @@ dtypes: geometry(1)
 memory usage: 140.0 bytes</code></pre>
 </div>
 </div>
+<p>Informações relevantes:</p>
+<ul>
+<li><p>Tem apenas 1 linha e 1 coluna (chamada <code>geometry</code>)</p></li>
+<li><p>Classe do objeto é <code>geopandas.geodataframe.GeoDataFrame</code></p></li>
+</ul>
 </section>
-<section id="visualizando-o-mapa" class="slide level2">
-<h2>Visualizando o mapa</h2>
-<div id="374537a0" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">15</span>), dpi<span class="op">=</span><span class="dv">300</span>)</span>
-<span id="cb9-2"><a href=""></a></span>
-<span id="cb9-3"><a href=""></a>geo_brasil.plot(facecolor<span class="op">=</span><span class="st">"#ffffff"</span>, edgecolor<span class="op">=</span><span class="st">"#000000"</span>, ax<span class="op">=</span>ax)</span>
-<span id="cb9-4"><a href=""></a></span>
-<span id="cb9-5"><a href=""></a>ax.axis(<span class="st">"off"</span>)</span>
-<span id="cb9-6"><a href=""></a></span>
-<span id="cb9-7"><a href=""></a>fig.savefig(<span class="st">"images/brasil_map.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-
-<img data-src="images/brasil_map.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="estados" class="slide level2">
-<h2>Estados</h2>
-<div id="a5ca8ceb" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href=""></a>geo_estados <span class="op">=</span> geobr.read_state(year <span class="op">=</span> <span class="dv">2020</span>)</span>
-<span id="cb10-2"><a href=""></a>geo_estados.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="o-que-é-o-geopandas" class="slide level2">
+<h2>O que é o geopandas?</h2>
+<ul>
+<li><a href="https://pandas.pydata.org/"><strong>Pandas</strong></a> é uma biblioteca Python focada em manipulação e análise de dados.</li>
+<li><a href="https://geopandas.org/"><strong>GeoPandas</strong></a> é uma biblioteca Python que estende as funcionalidades do <a href="https://pandas.pydata.org/">Pandas</a> para dados geoespaciais.</li>
+<li>Facilita a leitura, manipulação, análise e visualização de dados vetoriais (shapes) dentro de um único ecossistema.</li>
+<li>Cada linha em um <strong>GeoDataFrame</strong> corresponde a uma entidade geoespacial (por exemplo, um polígono de município).</li>
+<li>A coluna <code>geometry</code> armazena a forma geográfica em si (pontos, linhas ou polígonos).</li>
+</ul>
+</section>
+<section id="buscando-a-delimitação-dos-estados" class="slide level2">
+<h2>Buscando a delimitação dos estados</h2>
+<div id="cd847611" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a>geo_estados <span class="op">=</span> geobr.read_state(year <span class="op">=</span> <span class="dv">2020</span>)</span>
+<span id="cb11-2"><a href=""></a>geo_estados.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'geopandas.geodataframe.GeoDataFrame'&gt;
 RangeIndex: 27 entries, 0 to 26
@@ -459,11 +553,11 @@ memory usage: 1.4+ KB</code></pre>
 </div>
 </div>
 </section>
-<section id="section-1" class="slide level2">
+<section id="section-3" class="slide level2">
 <h2></h2>
-<div id="94636a43" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href=""></a>geo_estados.head(n<span class="op">=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="157">
+<div id="d395ddaa" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a>geo_estados.sample(n<span class="op">=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -493,31 +587,40 @@ memory usage: 1.4+ KB</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>11.0</td>
-<td>RO</td>
-<td>Rondônia</td>
-<td>1.0</td>
-<td>Norte</td>
-<td>MULTIPOLYGON (((-65.3815 -10.42907, -65.38013 ...</td>
+<td data-quarto-table-cell-role="th">26</td>
+<td>53.0</td>
+<td>DF</td>
+<td>Distrito Federal</td>
+<td>5.0</td>
+<td>Centro Oeste</td>
+<td>MULTIPOLYGON (((-47.41734 -15.54655, -47.4172 ...</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>12.0</td>
-<td>AC</td>
-<td>Acre</td>
+<td data-quarto-table-cell-role="th">5</td>
+<td>16.0</td>
+<td>AP</td>
+<td>Amapá</td>
 <td>1.0</td>
 <td>Norte</td>
-<td>MULTIPOLYGON (((-71.07772 -9.82774, -71.07817 ...</td>
+<td>MULTIPOLYGON (((-50.45011 2.10924, -50.44715 2...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>13.0</td>
-<td>AM</td>
-<td>Amazônas</td>
+<td data-quarto-table-cell-role="th">20</td>
+<td>41.0</td>
+<td>PR</td>
+<td>Paraná</td>
+<td>4.0</td>
+<td>Sul</td>
+<td>MULTIPOLYGON (((-48.40736 -25.8427, -48.4075 -...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">6</td>
+<td>17.0</td>
+<td>TO</td>
+<td>Tocantins</td>
 <td>1.0</td>
 <td>Norte</td>
-<td>MULTIPOLYGON (((-69.83766 -3.68659, -69.82555 ...</td>
+<td>MULTIPOLYGON (((-48.23291 -5.94757, -48.23163 ...</td>
 </tr>
 </tbody>
 </table>
@@ -526,24 +629,84 @@ memory usage: 1.4+ KB</code></pre>
 </div>
 </div>
 </section>
-<section id="visualizando-o-mapa-1" class="slide level2">
-<h2>Visualizando o mapa</h2>
-<div id="669f4cc1" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">15</span>), dpi<span class="op">=</span><span class="dv">300</span>)</span>
-<span id="cb13-2"><a href=""></a></span>
-<span id="cb13-3"><a href=""></a>geo_estados.plot(facecolor<span class="op">=</span><span class="st">"#ffffff"</span>, edgecolor<span class="op">=</span><span class="st">"#000000"</span>, ax<span class="op">=</span>ax)</span>
-<span id="cb13-4"><a href=""></a></span>
-<span id="cb13-5"><a href=""></a>ax.axis(<span class="st">"off"</span>)</span>
-<span id="cb13-6"><a href=""></a></span>
-<span id="cb13-7"><a href=""></a>fig.savefig(<span class="st">"images/brasil_estados_map.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="funções-similares" class="slide level2">
+<h2>Funções similares</h2>
+<ul>
+<li><p><code>read_country()</code>: Delimitação do Brasil</p></li>
+<li><p><code>read_state()</code>: Delimitação dos estados do Brasil</p></li>
+<li><p><code>read_state("SP")</code>: Delimitação de um estado específico, usando a sigla como argumento</p></li>
+<li><p><code>read_municipality()</code>: Delimitação de todos os municípios do Brasil. É uma base pesada!</p></li>
+<li><p><code>read_municipality(code_muni = 3550308)</code>: Delimitação de um município específico, usando o código do IBGE do município.</p></li>
+</ul>
+</section></section>
+<section>
+<section id="visualização" class="title-slide slide level1 center">
+<h1>Visualização</h1>
+
+</section>
+<section id="como-podemos-visualizar" class="slide level2">
+<h2>Como podemos visualizar?</h2>
+<div id="acd121a9" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="co"># geo_brasil.plot()</span></span>
+<span id="cb14-2"><a href=""></a><span class="co"># geo_brasil.explore()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="visualizando-o-mapa" class="slide level2">
+<h2>Visualizando o mapa</h2>
+<div id="b7d83166" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href=""></a><span class="co"># geo_estados.explore()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="dica" class="slide level2">
+<h2>Dica</h2>
+<ul>
+<li>O pacote <code>{geobr}</code> faz o download das bases de dados. Isso significa que:
+<ul>
+<li>Você precisa estar conectado à internet para baixar as bases de dados.</li>
+<li>Caso o servidor onde os dados estão armazenados esteja fora do ar, você não conseguirá baixar as bases de dados.</li>
+</ul></li>
+</ul>
+<p>Uma sugestão é salvar os resultados em um arquivo após baixar os dados, para evitar ter que baixar novamente.</p>
+</section>
+<section id="pacotes-de-dados-brasileiros-desenvolvidos-pelo-ipea" class="slide level2">
+<h2>Pacotes de dados brasileiros desenvolvidos pelo IPEA</h2>
+<center>
+<a href="https://ipeagit.github.io/geobr/"><img data-src="images/logos/geobr-amarelo.png" class="quarto-figure quarto-figure-center" style="width:15.0%"></a> <a href="https://ipeagit.github.io/geobr/"><img data-src="images/logos/geobr-preto.png" class="quarto-figure quarto-figure-center" style="width:15.0%"></a> <a href="https://ipeagit.github.io/flightsbr"><img data-src="images/logos/flightsbr.png" class="quarto-figure quarto-figure-center" style="width:15.0%"></a> <a href="https://ipeagit.github.io/censobr/"><img data-src="images/logos/censobr.png" class="quarto-figure quarto-figure-center" style="width:15.0%"></a>
+</center>
+</section></section>
+<section>
+<section id="materiais-para-estudar-mais" class="title-slide slide level1 center">
+<h1>Materiais para estudar mais</h1>
 
+</section>
+<section id="exemplos-similares" class="slide level2">
+<h2>Exemplos similares</h2>
+<ul>
+<li><p><a href="https://ipeagit.github.io/censobr_oficina_abep_2024/">Workshop: {censobr} - Explorando o Censo Demográfico em R</a></p></li>
+<li><p><a href="https://abjur.github.io/abjData/">Documentação: Pacote abjData</a></p></li>
+<li><p><a href="https://youtu.be/xnUo25VRH70?si=du-DZCkkadigTcCI">Video: Join - Juntando bases de dados</a></p></li>
+<li><p><a href="https://beamilz.com/posts/2020-07-27-criando-mapas-com-os-pacotes-tidyverse-e-geobr/pt/">Post: Criando mapas com os pacotes tidyverse e geobr, utilizando dados sobre coleta e tratamento de esgoto no Estado De São Paulo</a></p></li>
+</ul>
+</section>
+<section id="referências-sobre-dados-espaciais" class="slide level2">
+<h2>Referências sobre dados espaciais</h2>
+<ul>
+<li><p><a href="https://analises-ecologicas.netlify.app/cap15.html">Capítulo 15: Dados geoespaciais - Livro Análises Ecológicas no R</a></p></li>
+<li><p><a href="https://geocompr.robinlovelace.net/intro.html">Livro Geocomputation with R</a></p></li>
+<li><p><a href="https://docs.qgis.org/3.22/en/docs/gentle_gis_introduction/">A Gentle Introduction to GIS - QGIS Documentation</a></p></li>
+<li><p><a href="https://r.geocompx.org/spatial-class">Geocomputation with R - Foundations - Geographic data in R</a></p></li>
+<li><p><a href="https://ipeagit.github.io/intro_access_book/pt/">Introdução à acessibilidade urbana - um guia prático em R</a></p></li>
+</ul>
+</section>
+<section id="muito-obrigada" class="slide level2">
+<h2>Muito obrigada!</h2>
+<p>Slides feitos com <a href="https://quarto.org/docs/presentations/revealjs/index.html">Quarto</a>.</p>
 
-<img data-src="images/brasil_estados_map.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>Slides feitos com <a href="https://quarto.org/docs/presentations/revealjs/index.html">Quarto</a>.</p>
+<p><a href="https://beamilz.com">beamilz.com</a></p>
 </div>
 </div></div>
 
