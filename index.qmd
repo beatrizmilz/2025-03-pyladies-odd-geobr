@@ -6,13 +6,14 @@ date: "2025-03-29"
 date-format: "DD/MM/YYYY"
 format: 
   revealjs:
-    footer: "[beamilz.com](https://beamilz.com)"
+    footer: "[beamilz.com](https://beamilz.com) > talks and teaching > Como acessar dados geoespaciais abertos do Brasil com o geobr"
 #   logo: images/logo-laplan.png
     theme: styles.scss
     slide-number: c/t
     show-slide-number: all
     code-link: true
     code-copy: true
+    scrollable: true
 incremental: false
 jupyter: python3
 editor: 
@@ -72,18 +73,14 @@ Seria muito legal uma "linha do tempo" similar ao que a Nath Demi faz!
 
 -   Disponível para `R` e `Python`.
 
+- [Documentação do `geobr`: `.ipynb` com exemplos em Python](https://github.com/ipeaGIT/geobr/blob/master/python-package/examples/1.%20intro-to-geobr.ipynb)
+
 <center>
 ![](images/logos/geobr-amarelo.png){fig-align="center"
 width="15%"}
 ![](images/logos/geobr-preto.png){fig-align="center"
 width="15%"}
 </center>
-
-
-
-## 
-
-Fazer um disclaimer: eu programo em R há mais tempo. tem materiais que já fiz sobre isso. deixar links.
 
 
 # Conceitos importantes
@@ -234,27 +231,17 @@ geo_estados.sample(n=4)
 -   `read_municipality(code_muni = 3550308)`: Delimitação de um
     município específico, usando o código do IBGE do município.
 
-# Visualização
-## Como podemos visualizar?
+## Argumento importante: `simplify = TRUE`
 
+- As funções possuem um argumento chamado `simplify`, e seu valor padrão é `TRUE`. 
 
+- Esse argumento define se vamos importar as geometrias simplificadas (mais leves).
 
-```{python}
-# geo_brasil.plot()
-# geo_brasil.explore()
-```
+- Para análises onde é necessário um maior detalhamento das geometrias, o indicado é utilizar o `simplify = FALSE`.
 
+- As bases com `simplify = FALSE` são mais pesadas.
 
-## Visualizando o mapa
-
-```{python}
-# geo_estados.explore()
-```
-
-
-
-
-## Dica
+## Dica 
 
 - O pacote `{geobr}` faz o download das bases de dados. Isso significa que: 
     - Você precisa estar conectado à internet para baixar as bases de dados.
@@ -263,52 +250,91 @@ geo_estados.sample(n=4)
 Uma sugestão é salvar os resultados em um arquivo após baixar os dados, para evitar ter que baixar novamente.
 
 
-## Pacotes de dados brasileiros desenvolvidos pelo IPEA
+# Visualização
+## Como podemos visualizar?
 
-<center>[![](images/logos/geobr-amarelo.png){fig-align="center"
-width="15%"}](https://ipeagit.github.io/geobr/)
-[![](images/logos/geobr-preto.png){fig-align="center"
-width="15%"}](https://ipeagit.github.io/geobr/)
-[![](images/logos/flightsbr.png){fig-align="center"
-width="15%"}](https://ipeagit.github.io/flightsbr)
-[![](images/logos/censobr.png){fig-align="center"
-width="15%"}](https://ipeagit.github.io/censobr/)</center>
+Formas mais fáceis:
 
-# Materiais para estudar mais
+- `objeto_geopandas.plot()`
+- `objeto_geopandas.explore()`
+
+## 
+```{python}
+#| label: plot-geo-estados
+#| fig-align: "center"
+geo_estados.plot()
+```
 
 
-## Exemplos similares
+## 
 
--   [Workshop: {censobr} - Explorando o Censo Demográfico em
-    R](https://ipeagit.github.io/censobr_oficina_abep_2024/)
+```{python}
+#| label: explore-geo-estados
+geo_estados.explore()
+```
 
--   [Documentação: Pacote abjData](https://abjur.github.io/abjData/)
+# Exemplos
 
--   [Video: Join - Juntando bases de
-    dados](https://youtu.be/xnUo25VRH70?si=du-DZCkkadigTcCI)
+## Exemplo 1: Apenas dados disponíveis no `geobr`
 
--   [Post: Criando mapas com os pacotes tidyverse e geobr, utilizando
-    dados sobre coleta e tratamento de esgoto no Estado De São
-    Paulo](https://beamilz.com/posts/2020-07-27-criando-mapas-com-os-pacotes-tidyverse-e-geobr/pt/)
+Localização das escolas estaduais e escolas privadas no município de São Paulo, que oferecem Ensino Médio
 
-## Referências sobre dados espaciais
+![](images/mapa-muni-sp-escolas-final-1.png){fig-align="center"}
 
--   [Capítulo 15: Dados geoespaciais - Livro Análises Ecológicas no
-    R](https://analises-ecologicas.netlify.app/cap15.html)
+::: {.footer}
+Fonte: [Workshop na aMostra: Conhecendo o pacote `geobr`](https://beatrizmilz.github.io/2024-09-amostra-geobr/#/exemplo-1)
+:::
 
--   [Livro Geocomputation with
-    R](https://geocompr.robinlovelace.net/intro.html)
+## Exemplo 2: Dados do `geobr` + join com dados externos
 
--   [A Gentle Introduction to GIS - QGIS
-    Documentation](https://docs.qgis.org/3.22/en/docs/gentle_gis_introduction/)
 
--   [Geocomputation with R - Foundations - Geographic data in
-    R](https://r.geocompx.org/spatial-class)
 
--   [Introdução à acessibilidade urbana - um guia prático em
-    R](https://ipeagit.github.io/intro_access_book/pt/)
+Experança de vida nos municípios do estado de São Paulo em 1991, 2000, 2010.
+
+![](images/mapa-pnud-geo-1.png){fig-align="center"}
+
+::: {.footer}
+Fonte: [Workshop na aMostra: Conhecendo o pacote `geobr`](https://beatrizmilz.github.io/2024-09-amostra-geobr/#/exemplo-2)
+:::
+
+
+## Exemplo 3: Dados do `geobr` + dados do `censobr`
+
+![](images/map-tracts-densidade-1.png){fig-align="center"}
+
+Feito por: [Rafael H. M. Pereira](https://ipeadata-lab.github.io/curso_r_intro_202409/12_censobr_agregados_setores.html)
+
+
+
+# Encerramento
+
+## Materiais para estudar mais: Exemplos em R
+
+- 2025 - [Aula no curso R intermediário e pesquisa reprodutível: Dados espaciais no R](https://ipeadata-lab.github.io/curso_r_intermediario_202501/dados-espaciais.html)
+
+- 2024 - [Workshop na aMostra: Conhecendo o pacote `geobr`](https://beamilz.com/talks/pt/2024-09-amostra-ime-usp-geobr/)
+
+- 2023 - [Apresentação no Meetup R-Ladies São Paulo: Conhecendo o pacote `geobr`](https://beamilz.com/talks/pt/2023-11-pacotes-br-geobr/)
+
+- 2020 [Video: Join - Juntando bases de dados](https://youtu.be/xnUo25VRH70?si=du-DZCkkadigTcCI)
+
+- 2020 - [Post: Criando mapas com os pacotes tidyverse e geobr, utilizando dados sobre coleta e tratamento de esgoto no Estado De São Paulo](https://beamilz.com/posts/2020-07-27-criando-mapas-com-os-pacotes-tidyverse-e-geobr/pt/)
+
 
 
 ## Muito obrigada!
 
-Slides feitos com [Quarto](https://quarto.org/docs/presentations/revealjs/index.html).
+<img  src="images/bea.png" style=" position: absolute;top: 0%; right: 0%; width: 60%; z-index: 0;"/>
+
+
+- Email: [milz.bea@gmail.com](mailto:milz.bea@gmail.com)
+- GitHub: [@beatrizmilz](https://github.com/beatrizmilz)
+- Instagram: [@dadoseambiente](https://www.instagram.com/dadoseambiente/)
+- Youtube: [@beamilz](https://www.youtube.com/@beamilz)
+
+
+
+
+Na minha página pessoal, você encontra [meus contatos](https://beamilz.com/about-pt), e também [palestras (anteriores e futuras)](https://beamilz.com/content).
+
+Slides feitos com [Quarto](https://quarto.org/docs/presentations/revealjs/index.html). Você pode consultar o código [aqui](https://github.com/beatrizmilz/2025-03-pyladies-odd-geobr/blob/main/index.qmd).
