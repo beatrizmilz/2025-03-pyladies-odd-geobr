@@ -14,7 +14,7 @@ $h2-font-size: 1.3em !default;
 $h3-font-size: 1.15em !default;
 
 //code
-$code-color:  #efe4cd !default;
+$code-color:  #f1c843 !default;
 $font-family-monospace: 'Fira Code', monospace  !default;
 
 // general
@@ -27,7 +27,7 @@ $presentation-font-size-root: 35px;
 .reveal pre code {
   background-color: #f8f8f8;
   color: #123d68;
-  font-size: 1em;
+  font-size: 1.5em;
   padding: 0.5em;
   line-height: 1.2em;
 }
@@ -91,4 +91,8 @@ section.has-dark-background a, section.has-dark-background a:hover {
 
 .reveal .cell-output .cell-output-display{
   font-size: 12px !important;
+}
+
+.reveal pre.sourceCode code{
+  font-size: 1.5em;
 }
