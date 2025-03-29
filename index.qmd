@@ -43,7 +43,7 @@ width="20%"}](https://ropensci.org/)
 width="25%"}](https://stars.github.com/profiles/beatrizmilz/)</center>
 
 
-## {background-color="white" background-image="images/linha-do-tempo.png"}
+## {background-color="white" background-image="images/linha-do-tempo.png" background-size="contain"}
 
 ::: {.footer}
 
