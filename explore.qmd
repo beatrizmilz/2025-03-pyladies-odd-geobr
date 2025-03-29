@@ -1,0 +1,12 @@
+```{python}
+import geobr
+```
+
+```{python}
+geo_estados = geobr.read_state(year = 2020)
+```
+
+```{python}
+#| label: explore-geo-estados
+geo_estados.explore()
+```

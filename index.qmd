@@ -270,8 +270,11 @@ geo_estados.plot()
 
 ```{python}
 #| label: explore-geo-estados
+#| eval: false
 geo_estados.explore()
 ```
+
+[![](images/explore.png)](https://beatrizmilz.github.io/2025-03-pyladies-odd-geobr/explore.html)
 
 # Exemplos
 
